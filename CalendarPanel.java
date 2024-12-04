@@ -28,7 +28,7 @@ public class CalendarPanel extends JPanel {
         }
 
         int[] weekends = {1, 7, 8, 14, 15, 21, 22, 28, 29}; 
-        int[] specialDays = {24, 25};
+        int[] specialDays = {24, 25, 31};
 
         for (int i = 1; i <= 31; i++) {
             JPanel box = new JPanel();
@@ -47,13 +47,13 @@ public class CalendarPanel extends JPanel {
                 public void mouseClicked(java.awt.event.MouseEvent e) {
                     if (editMode) {
                         if (box.getBackground().equals(Color.DARK_GRAY) || box.getBackground().equals(Color.GREEN)) {
-                            box.setBackground(null); // Reset to default
+                            box.setBackground(null); 
                             dayLabel.setForeground(Color.BLACK);
                         } else if (SwingUtilities.isLeftMouseButton(e)) {
-                            box.setBackground(Color.GREEN); // Mark as available
+                            box.setBackground(Color.GREEN); 
                             dayLabel.setForeground(Color.BLACK);
                         } else if (SwingUtilities.isRightMouseButton(e)) {
-                            box.setBackground(Color.DARK_GRAY); // Mark as unavailable
+                            box.setBackground(Color.DARK_GRAY); 
                             dayLabel.setForeground(Color.WHITE);
                         }
                     }
